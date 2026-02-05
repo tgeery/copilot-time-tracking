@@ -20,7 +20,6 @@ function App() {
   const [selectedTaskId, setSelectedTaskId] = useState(null)
   const [isPaused, setIsPaused] = useState(false)
   const [elapsedMinutes, setElapsedMinutes] = useState(0)
-  const [pausedElapsed, setPausedElapsed] = useState(0)
 
   // Initialize database and load today's data
   useEffect(() => {
@@ -38,20 +37,22 @@ function App() {
     init()
   }, [])
 
-  // Timer interval
+  // Timer interval - update displayed elapsed time
   useEffect(() => {
-    if (!activeTimerId || isPaused) return
+    if (!activeTimerId) return
 
     const interval = setInterval(() => {
       const activeEntry = timeEntries.find(e => e.id === activeTimerId)
       if (activeEntry && !activeEntry.end_time) {
-        const elapsed = calculateElapsedMinutes(activeEntry.start_time)
-        setElapsedMinutes(elapsed + pausedElapsed)
+        if (!isPaused) {
+          const elapsed = calculateElapsedMinutes(activeEntry.start_time)
+          setElapsedMinutes(elapsed)
+        }
       }
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [activeTimerId, isPaused, timeEntries, pausedElapsed])
+  }, [activeTimerId, isPaused, timeEntries])
 
   const loadTodayData = async () => {
     try {
@@ -131,7 +132,6 @@ function App() {
         setSelectedTaskId(taskId)
         setIsPaused(false)
         setElapsedMinutes(0)
-        setPausedElapsed(0)
       }
     } else {
       setSelectedTaskId(taskId)
@@ -156,7 +156,6 @@ function App() {
 
   const handlePauseTimer = () => {
     setIsPaused(true)
-    setPausedElapsed(elapsedMinutes)
   }
 
   const handleResumeTimer = () => {
@@ -182,7 +181,6 @@ function App() {
     setSelectedTaskId(null)
     setIsPaused(false)
     setElapsedMinutes(0)
-    setPausedElapsed(0)
   }
 
   const activeTask = selectedTaskId ? tasks.find(t => t.id === selectedTaskId) : null
