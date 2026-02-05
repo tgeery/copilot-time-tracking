@@ -1,0 +1,76 @@
+.project-list {
+  margin-bottom: 20px;
+}
+
+.project-list h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.project-list .empty {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin: 0;
+}
+
+.project-list .projects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #ecf0f1;
+  border-radius: 4px;
+}
+
+.project-item .project-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.project-item .project-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.project-item .edit-form {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.project-item .edit-form input {
+  flex: 1;
+}
+
+.project-item .edit-form button {
+  white-space: nowrap;
+}
+
+.project-item button.small {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.project-item button.danger {
+  background-color: #e74c3c;
+}
+
+.project-item button.danger:hover {
+  background-color: #c0392b;
+}
+
+.project-item button.cancel {
+  background-color: #95a5a6;
+}
+
+.project-item button.cancel:hover {
+  background-color: #7f8c8d;
+}

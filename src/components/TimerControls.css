@@ -1,0 +1,44 @@
+.timer-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.timer-controls button {
+  flex: 1;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.timer-controls button.primary {
+  background-color: #27ae60;
+}
+
+.timer-controls button.primary:hover {
+  background-color: #229954;
+}
+
+.timer-controls button.success {
+  background-color: #27ae60;
+}
+
+.timer-controls button.success:hover {
+  background-color: #229954;
+}
+
+.timer-controls button.warning {
+  background-color: #f39c12;
+}
+
+.timer-controls button.warning:hover {
+  background-color: #d68910;
+}
+
+.timer-controls button.danger {
+  background-color: #e74c3c;
+}
+
+.timer-controls button.danger:hover {
+  background-color: #c0392b;
+}

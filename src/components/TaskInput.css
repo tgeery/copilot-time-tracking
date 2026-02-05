@@ -1,0 +1,30 @@
+.task-input {
+  margin-bottom: 20px;
+}
+
+.task-input h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.task-input form {
+  display: flex;
+  gap: 8px;
+}
+
+.task-input input,
+.task-input select {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-input button {
+  white-space: nowrap;
+}
+
+.task-input .error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin: 8px 0 0 0;
+}

@@ -26,8 +26,30 @@
 
 .app-main {
   flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px 1fr;
+  gap: 20px;
   padding: 20px;
   overflow-y: auto;
+  flex: 1;
+}
+
+.section-left {
+  min-width: 0;
+}
+
+.section-center {
+  min-width: 0;
+}
+
+.section-right {
+  min-width: 0;
 }
 
 button {
@@ -75,4 +97,10 @@ select:focus {
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+@media (max-width: 1400px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
 }
