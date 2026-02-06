@@ -21,7 +21,7 @@ A simple web-based time-tracking application for monitoring daily task durations
 
 ```bash
 # Clone the repository and navigate to it
-cd /home/oem/develop/practice/copilot-time-tracking
+cd copilot-time-tracking
 
 # Install dependencies
 npm install
